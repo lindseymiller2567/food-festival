@@ -174,13 +174,15 @@
 </body>
 
 <script>
+  // iife
+  // first set of () lets js know it will process the function as a function expression 
   (function () {
-    if ("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator) { // navigator is the browser
       navigator.serviceWorker.register("./service-worker.js") // this does what <script src="./service-worker.js"> would otherwise do
         .then(() => console.log("Service Worker registered successfully."))
         .catch(error => console.log("Service Worker registration failed:", error));
     }
-  })();
+  })(); // immediatlly invokes the function 
 </script>
 
 </html>
